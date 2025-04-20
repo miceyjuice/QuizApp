@@ -1,11 +1,10 @@
-import { StyleSheet, Image, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { Colors } from "@/constants/Colors";
 
 export default function WelcomeScreen() {
   const colorScheme = useColorScheme() ?? "light";
@@ -33,7 +32,7 @@ export default function WelcomeScreen() {
         </ThemedText>
 
         <Link
-          href="/quiz"
+          href="/category"
           asChild
           style={{
             maxWidth: 300, // Replace with an appropriate numeric value or percentage
@@ -54,17 +53,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
-    gap: 40,
-  },
-  logo: {
-    width: 150,
-    height: 150,
-  },
-  img: {
-    width: 300,
-    height: 300,
   },
   title: {
+    fontSize: 28,
+    fontWeight: "bold",
     marginBottom: 20,
     textAlign: "center",
   },
@@ -74,7 +66,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   startButton: {
-    backgroundColor: Colors.dark.primaryCtaBtn,
+    backgroundColor: "#0a7ea4",
     paddingVertical: 15,
     paddingHorizontal: 50,
     borderRadius: 30,
@@ -83,5 +75,13 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 18,
     fontWeight: "bold",
+  },
+  logo: {
+    width: 150,
+    height: 150,
+  },
+  img: {
+    width: 300,
+    height: 300,
   },
 });
